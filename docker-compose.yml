@@ -1,0 +1,27 @@
+version: "1.0"
+
+services:
+  backend:
+    # Specify Image name
+    image: backend
+
+    # Specify Image name
+    container_name: backend
+
+    # specify context and dockerfile to build
+    build: 
+
+      #Docker context is path where dockerfile is located.
+      context: ./
+
+      #specify Dockerfile to build.
+      dockerfile: Dockerfile
+
+    #expose ports
+    ports:
+      - "8082:80"
+      - "443:43"
+
+    #persistent volume
+    volumes: 
+      - ./src:/usr/share/nginx/html/project
